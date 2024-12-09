@@ -8,5 +8,7 @@ Algebra
 
    amgmhm.rst
 
+   radicalSimplification.rst
+   
    infiniteRadicals.rst
    
