@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic Combinatorics &#8212; Math Notes  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Combinatorics" href="combinatorics.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="combinatorics.html" title="Combinatorics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Math Notes  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="combinatorics.html" accesskey="U">Combinatorics</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Basic Combinatorics</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="basic-combinatorics">
+<h1>Basic Combinatorics<a class="headerlink" href="#basic-combinatorics" title="Permalink to this headline">¶</a></h1>
+<section id="enumeration">
+<h2>Enumeration<a class="headerlink" href="#enumeration" title="Permalink to this headline">¶</a></h2>
+<p>Combinatorics deals with counting. The most basic way of counting is to list out all possibilities.</p>
+<p>The natural numbers are a great example of how items are laid out methodically. The units place is changed first until the last symbol is hit, then the tens place is incremented and the units place is reset, and so on.</p>
+<p>Similarly, enumerating possibilites should be done systematically to ensure that no possibility is left out.</p>
+<hr class="docutils" />
+<p>Example: List all possible three digit numbers made up of digits 3, 4, and 5</p>
+<p>Following the same procedure as the natural numbers:</p>
+<p>333</p>
+<p>334</p>
+<p>335</p>
+<p>343</p>
+<p>344</p>
+<p>345</p>
+<p>353</p>
+<p>354</p>
+<p>355</p>
+<p>433</p>
+<p>434</p>
+<p>435</p>
+<p>443</p>
+<p>444</p>
+<p>445</p>
+<p>453</p>
+<p>454</p>
+<p>455</p>
+<p>533</p>
+<p>534</p>
+<p>535</p>
+<p>543</p>
+<p>544</p>
+<p>545</p>
+<p>553</p>
+<p>554</p>
+<p>555</p>
+<hr class="docutils" />
+<p>Example: List all partitions of 5</p>
+<p>Start with the partition containing the largest number. Then, decrement this number and keep partitioning the remaining part recursively following the same rule.</p>
+<p>5 = 5</p>
+<p>5 = 4 + 1</p>
+<p>5 = 3 + 2</p>
+<p>5 = 3 + 1 + 1</p>
+<p>5 = 2 + 2 + 1</p>
+<p>5 = 2 + 1 + 1 + 1</p>
+<p>5 = 1 + 1 + 1 + 1 + 1</p>
+</section>
+<hr class="docutils" />
+<section id="addition-principle">
+<h2>Addition Principle<a class="headerlink" href="#addition-principle" title="Permalink to this headline">¶</a></h2>
+<p>A person wants to go from A to B. The person can choose one of 3 trains that run between A to B or one of 5 buses that run on that route.</p>
+<p>The total number of ways for the person to go from A to B is thus 3+5=8. The key concept here is <strong>OR</strong>. The person will either take a train or a bus.</p>
+<p>Whenever counting involves mututally exclusive events, the number of ways from the mutually exclusive events can be added.</p>
+</section>
+<section id="multiplication-principle">
+<h2>Multiplication Principle<a class="headerlink" href="#multiplication-principle" title="Permalink to this headline">¶</a></h2>
+<p>A person wants to fly from A to C. There are no direct flights. The only way ther person can go is to fly on one of 3 flights from A to B, and then on one of 5 flights from B to C.</p>
+<p>The total number of ways for the person to fly from A to C is thus 3x5=15. Here, the key concept is <strong>AND</strong>. The person has to take a flight from A to B and a flight from B to C.</p>
+<hr class="docutils" />
+<p>4 English and 3 French books need to arranged on a book-shelf such that all the English books are together and all the French books are together.</p>
+<p>Order the English books within a unit <strong>and</strong> order the French books within a unit <strong>and</strong> order the two units on the shelf ignoring the ordering within each unit</p>
+<p>The total number of ways can thus be calculated by multiplying the number of ways for each of the three steps.</p>
+</section>
+<section id="permutations">
+<h2>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h2>
+<p>In how many ways can persons A, B, and C sit on 5 distinguishable chairs?</p>
+<p>A can choose a chair in 5 ways, B can choose a chair in 4 ways (as A has occupied one chair), and C can choose a chair in 3 ways (the remaining chairs). Thus, by the multiplication principle, the total number of ways is</p>
+<p><img class="math" src="_images/math/1972ea682ef785f8f47d5cbb4a0b7e800ee24ce2.png" alt="5\times 4\times 3 = 60"/></p>
+<p>This is called as the permumation of n objects taken r at a time and is denoted by <img class="math" src="_images/math/b0ca258ca2a420238803c8d850dbd1208dc9ee57.png" alt="P(n,r)"/>.</p>
+<p>So in the above case,</p>
+<div class="math">
+<p><img src="_images/math/647c93ae5e8da5e45457968cef6630085753b72e.png" alt="P(5,3) = 5\times 4\times 3 = \frac{5!}{(5-3)!}"/></p>
+</div><p>Note that if there were 5 persons sitting in 5 chairs, the problem is same as finding <strong>the number of ways of shuffling the order</strong> of 5 people. In this case, we have</p>
+<div class="math">
+<p><img src="_images/math/3350fb7daf82d6600f5a6fa09f434e7b311d5bd9.png" alt="P(5,5) = \frac{5!}{(5-5)!}=\frac{5!}{0!}=\frac{5!}{1}=5!"/></p>
+</div></section>
+<section id="combinations">
+<h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
+<p>If in the above discussion, we replace the three persons with three indistinguishable robots. Thus, we just need to choose 3 chairs out of the 5. Which robot sits on which chair does not matter as the robots are indistinguishable. Hence, the number of ways is <img class="math" src="_images/math/01cd84c86738cd7b0edd8249f855be1af7272674.png" alt="\frac{P(5,3)}{P(3,3)}=\frac{P(5,3)}{3!}"/></p>
+<p>The total number of ways computed as permutations have to be divided by the number of ways in which the three robots can be ordered as all orderings are identical when the robots are indistinguishable.</p>
+<p>This way of counting is called combinations of n objects taken r at a time and is denoted by <img class="math" src="_images/math/308928bb2c5f5f198145d7fffcea240228dd9126.png" alt="C(n,r)"/>.</p>
+<p>Thus, <img class="math" src="_images/math/79d62ce04ea134acaebfecba23de30bf27a52c10.png" alt="C(5,3)=\frac{P(5,3)}{3!}=\frac{5!}{(5-3)!3!}=\frac{5!}{2!3!}"/>.</p>
+<p>Note that choosing 3 chairs from 5 is equivalent to choosing 2 excluded chairs from the 5 chairs.</p>
+<p>Hence, <img class="math" src="_images/math/2f996cc5119225965f26cb4d3cb2b245e0128d1a.png" alt="C(5,3)=C(5,2)"/>. Combinations have this symmetry.</p>
+<p>Thus, <strong>the main difference between permutations and combinations is whether the objects are distinguishable and ordering matters or whether the objects are indistinguishable, ordering does not matter, and all orderings are counted as a single arrangement</strong>.</p>
+</section>
+<section id="power-principle">
+<h2>Power Principle<a class="headerlink" href="#power-principle" title="Permalink to this headline">¶</a></h2>
+<p>How many ways can 3 persons choose a drink from Coke and Pepsi?</p>
+<p>Each person can choose a drink in 2 ways. Hence, from the multiplication principle, the total number of ways is <img class="math" src="_images/math/e3d2e17ca4c5663123519746363e8d4e88a4edf9.png" alt="2\times 2\times 2=2^3"/>.</p>
+<p>Thus, we have number of choices per person raised to the power of number of persons.</p>
+</section>
+<section id="complementary-principle">
+<h2>Complementary Principle<a class="headerlink" href="#complementary-principle" title="Permalink to this headline">¶</a></h2>
+<p>How many numbers smaller than or equal to 25 are relatively prime with 25?</p>
+<p>This can be found by Calculating how many numbers have a common factor with 25 that greater than 1 and subtracting this nunber from 25. The numbers with the common factor are the ones divisible by 5.</p>
+<p>The answer is <img class="math" src="_images/math/0651f45d18ce874b910a9c50af285a82ce3478b2.png" alt="25-\frac{25}{5}=20"/>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Basic Combinatorics</a><ul>
+<li><a class="reference internal" href="#enumeration">Enumeration</a></li>
+<li><a class="reference internal" href="#addition-principle">Addition Principle</a></li>
+<li><a class="reference internal" href="#multiplication-principle">Multiplication Principle</a></li>
+<li><a class="reference internal" href="#permutations">Permutations</a></li>
+<li><a class="reference internal" href="#combinations">Combinations</a></li>
+<li><a class="reference internal" href="#power-principle">Power Principle</a></li>
+<li><a class="reference internal" href="#complementary-principle">Complementary Principle</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="combinatorics.html"
+                        title="previous chapter">Combinatorics</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/basicCombinatorics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="combinatorics.html" title="Combinatorics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Math Notes  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="combinatorics.html" >Combinatorics</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Basic Combinatorics</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2024, AI.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

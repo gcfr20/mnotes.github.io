@@ -12,6 +12,8 @@ Welcome to Math Notes's documentation!
 
    algebra.rst
    numberTheory.rst
+   combinatorics.rst
+   
 
 	     
 

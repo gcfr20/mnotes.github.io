@@ -1,0 +1,16 @@
+
+Combinatorics
+======================================
+
+.. toctree::
+
+   basicCombinatorics.rst
+   
+   inclusionExclusion.rst
+
+   pigeonhole.rst
+
+   stonesSticks.rst
+
+   recurrence.rst
+   
