@@ -186,7 +186,7 @@ In how many ways can 12 kids be divided into 4 teams of sizes 4, 3, 3, and 2?
 
 Choose 4 kids from 12 and assign them to the first team, choose 3 from the remaining 8 and assign them to the second team, choose 3 from the remaining 5 and assign them to the third team. The rest of the kids go to the fourth team.
 
-:math:`C(12,4)\times C(8,3)\times C(5,3)`. This answer is correct, but could be cumbersome to evaluate. The key observation here is the following simplification.
+:math:`C(12,4)\times C(8,3)\times C(5,3)`. This answer is correct, but could be cumbersome to evaluate. However, many terms cancel out, and the following simplification helps in the evaluation. In fact, the final answer can directly be written down noting that we are choosing (4,3,3,2) from 12.
 
 .. math::
 
