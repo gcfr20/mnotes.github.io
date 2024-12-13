@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Stones and Sticks Principle &#8212; Math Notes  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Pigeonhole Principle" href="pigeonhole.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pigeonhole.html" title="Pigeonhole Principle"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Math Notes  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="combinatorics.html" accesskey="U">Combinatorics</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Stones and Sticks Principle</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="stones-and-sticks-principle">
+<h1>Stones and Sticks Principle<a class="headerlink" href="#stones-and-sticks-principle" title="Permalink to this headline">¶</a></h1>
+<p>In our discussion of the <a class="reference internal" href="inclusionExclusion.html#distinguishable-distributions"><span class="std std-ref">inclusion-exclusion principle</span></a> , we had come across the following problem:</p>
+<p>In how many ways can 12 distinguishable presents be given to three people such that every person gets at least one present and all the presents are given out?</p>
+<p>Now we modify the problem such that the 12 presents are indistinguishable. The difference from the earlier problem is that now only the present count matters. In the earlier problem, exactly which present was given mattered.</p>
+<p>This problem can be solved using the stones and sticks principle. Imagine that the 12 presents are 12 stones placed in a row (blue circles in the image below). We will make three groups of stones by placing two sticks (the black vertical lines) in two of the 11 gaps (gaps are shown by the red pointers) between the stones. This will ensure that the stones are divided into three groups and none of the three groups is empty. The first group of stones (presents) go to the first person, the second group to the second person, and the third group to the third person.</p>
+<a class="reference internal image-reference" href="_images/stones_and_sticks.png"><img alt="_images/stones_and_sticks.png" src="_images/stones_and_sticks.png" style="width: 400px;" /></a>
+<p>Thus, the problem reduces to choosing 2 of the 11 gaps for the sticks. So the answer is C(11,2). By ensuring that only one stick goes in a gap, we guarantee that no group is empty.</p>
+<hr class="docutils" />
+<p>This problem is equivalent to the following problem:</p>
+<p>Find the number of integer solutions to</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/bb551b49338b92778cfb389f714343c4d79c4665.png" alt="x_1\geq 1,~x_2\geq 1,~x_3\geq 1"/>.</p>
+<hr class="docutils" />
+<p>If we modify the problem such that not giving any present to a person is allowed, yet all 12 presents have to be given out, then the equivalent problem is</p>
+<p>Find the number of integer solutions to</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/9406295188c1155c579a355569ced6d0083042a2.png" alt="x_1\geq 0,~x_2\geq 0,~x_3\geq 0"/>.</p>
+<p>The inequality constraints have changed. Now 0 is allowed as a value for the variables.</p>
+<p>This problem can be changed to the earlier form (where stones and sticks principle was applicable) by making a change of variables.</p>
+<p>Let <img class="math" src="_images/math/89898a8af48f8bae8b26c35b0781bdf145155a23.png" alt="y_1=x_1+1,~y_2=x_2+1,~y_3=x_3+1"/>.</p>
+<p><img class="math" src="_images/math/b02a379068ebf2001968dda3a73f401b25bfe380.png" alt="y_1+y_2+y_3=12+1+1+1=15"/> such that <img class="math" src="_images/math/16fe4cd4a4f9edec314579c1c1c719eb8d13b77c.png" alt="y_1\geq 1,~y_2\geq 1,~y_3\geq 1"/>.</p>
+<p>15 stones (14 gaps) and  3 groups (2 sticks) leads to the answer C(14,2).</p>
+<hr class="docutils" />
+<p>In fact, this approach can be used for arbitrary combinations of lower bound constraints. For example,</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/f9d1f19c55e1505eb16071f1331b8f758de62784.png" alt="x_1\geq 2,~x_2\geq 3,~x_3\geq 4"/>.</p>
+<p>Let <img class="math" src="_images/math/1786f8a67123622023bfbddb12a9228c2c60e82e.png" alt="y_1=x_1-1,~y_2=x_2-2,~y_3=x_3-3"/>.</p>
+<p><img class="math" src="_images/math/2f6e05c654fd898fe5c86ce0aa90b3ad7e680771.png" alt="y_1+y_2+y_3=12-1-2-3=6"/> such that <img class="math" src="_images/math/16fe4cd4a4f9edec314579c1c1c719eb8d13b77c.png" alt="y_1\geq 1,~y_2\geq 1,~y_3\geq 1"/>.</p>
+<p>6 stones (5 gaps) and  3 groups (2 sticks) leads to the answer C(5,2).</p>
+<hr class="docutils" />
+<p>How to handle mixed lower bound and upper bound constraints?</p>
+<p>12 presents need to be given out in such a way that the first person needs to get any number of presents from 3 to 6 (both inclusive), the second person needs to get any number of presents from 2 to 4 (both inclusive), and the third person needs to get at least one present.</p>
+<p>The equivalent problem is</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/051268d6c1c83cf67e83036be56a83629c980bdb.png" alt="6\geq x_1\geq 3,~4\geq x_2\geq 2,~x_3\geq 1"/>.</p>
+<p>Inclusion-exclusion principle needs to be applied.</p>
+<p>Set U:</p>
+<p>Integer solutions to</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/0515738349951ea330108ee8b53a0f41cfc8b0ab.png" alt="x_1\geq 3,~x_2\geq 2,~x_3\geq 1"/>.</p>
+<p>Set A:</p>
+<p>Integer solutions to</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/f07e94cc156485bd54685426319a8046085bc49d.png" alt="x_1\geq 7,~x_2\geq 2,~x_3\geq 1"/>.</p>
+<p>Set B:</p>
+<p>Integer solutions to</p>
+<p><img class="math" src="_images/math/5c0d966897d39408e7c95c562022c9c1022ce837.png" alt="x_1+x_2+x_3=12"/> such that <img class="math" src="_images/math/ff4bb7e2b37745ecd60d759703062c82b6259c45.png" alt="x_1\geq 3,~x_2\geq 5,~x_3\geq 1"/>.</p>
+<p>The answer to our problem is</p>
+<p><img class="math" src="_images/math/a1a29c54af128f2e27ed0bfdeb47e8e96426d168.png" alt="\#U-\#(A\cup B)"/>.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pigeonhole.html"
+                        title="previous chapter">Pigeonhole Principle</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/stonesSticks.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pigeonhole.html" title="Pigeonhole Principle"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Math Notes  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="combinatorics.html" >Combinatorics</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Stones and Sticks Principle</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2024, AI.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

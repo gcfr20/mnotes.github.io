@@ -149,7 +149,8 @@ Hence,
 
 Here is another example
 
-=================================================
+Distinguishable Distributions
+-------------------------------
 
 In how many ways can 12 distinguishable presents be given to three people such that every person gets at least one present and all the presents are given out?
 
