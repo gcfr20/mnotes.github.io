@@ -142,6 +142,18 @@
 <p>This can be found by Calculating how many numbers have a common factor with 25 that greater than 1 and subtracting this nunber from 25. The numbers with the common factor are the ones divisible by 5.</p>
 <p>The answer is <img class="math" src="_images/math/0651f45d18ce874b910a9c50af285a82ce3478b2.png" alt="25-\frac{25}{5}=20"/>.</p>
 </section>
+<section id="multinomial-assignment">
+<h2>Multinomial Assignment<a class="headerlink" href="#multinomial-assignment" title="Permalink to this headline">¶</a></h2>
+<p>In how many ways can 12 kids be divided into 4 teams of sizes 4, 3, 3, and 2?</p>
+<p>Choose 4 kids from 12 and assign them to the first team, choose 3 from the remaining 8 and assign them to the second team, choose 3 from the remaining 5 and assign them to the third team. The rest of the kids go to the fourth team.</p>
+<p><img class="math" src="_images/math/4dbcaaed431e27345672170a8622dd9c2326f2a2.png" alt="C(12,4)\times C(8,3)\times C(5,3)"/>. This answer is correct, but could be cumbersome to evaluate. The key observation here is the following simplification.</p>
+<div class="math">
+<p><img src="_images/math/7e29e7cdbe34330a112cb6d86ce56593cb8a4040.png" alt="&amp;C(12,4)\times C(8,3)\times C(5,3)
+
+&amp;= \frac{12!}{4!8!}\times\frac{8!}{3!5!}\times\frac{5!}{3!2!}
+
+&amp;= \frac{12!}{4!3!3!2!}"/></p>
+</div></section>
 </section>
 
 
@@ -161,6 +173,7 @@
 <li><a class="reference internal" href="#combinations">Combinations</a></li>
 <li><a class="reference internal" href="#power-principle">Power Principle</a></li>
 <li><a class="reference internal" href="#complementary-principle">Complementary Principle</a></li>
+<li><a class="reference internal" href="#multinomial-assignment">Multinomial Assignment</a></li>
 </ul>
 </li>
 </ul>
