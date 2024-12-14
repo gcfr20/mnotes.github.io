@@ -2,6 +2,57 @@
 Basic Combinatorics
 ======================================
 
+Factorial
+^^^^^^^^^^^^
+
+The product of all positive integers less than or equal to :math:`N` is written compactly as :math:`N!` and is called as "N factorial".
+
+.. math::
+
+   &1! = 1
+
+   &2! = 1\times 2
+
+   &3! = 1\times 2\times 3
+
+   &\ldots
+
+
+When dealing with sums, the empty sum is chosen as :math:`0` - the additive neutral element. Analogously, when dealing with products, the empty product is chosen as :math:`1` - the multiplicative neutral element. Thus,
+
+.. math::
+
+   0! = 1
+
+For doing any numerical manipulations in expressions containing factorials, one should remember that this is just a convenient way to write. Under the hood, we are still dealing with products of integers.
+
+**To avoid common pitfalls, we highlight a few things**
+
+.. math::
+
+   &2!\times 2!\neq 4!
+
+   &(1\times 2)\times(1\times 2)\neq (1\times 2\times 3\times 4)
+
+   &~
+   
+   &2!+5!\neq 7!
+
+   &(1\times 2)+(1\times 2\times 3\times 4\times 5)\neq 1\times 2\times 3\times 4\times 5\times 6\times 7
+
+   &~
+   
+   &\frac{6!}{2!}\neq 3!
+
+   &\frac{1\times 2\times 3\times 4\times 5\times 6}{1\times 2}\neq 1\times 2\times 3
+
+   &~
+
+   & \left(2!\right)^2\neq 4!
+
+   &(1\times 2)\times(1\times 2)\neq (1\times 2\times 3\times 4)
+
+
 Enumeration
 ---------------
 
@@ -92,6 +143,7 @@ Start with the partition containing the largest number. Then, decrement this num
 5 = 1 + 1 + 1 + 1 + 1
 
 =================================================
+
 
 Addition Principle
 -------------------
