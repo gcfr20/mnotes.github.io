@@ -12,5 +12,4 @@ Combinatorics
 
    stonesSticks.rst
 
-   recurrence.rst
    

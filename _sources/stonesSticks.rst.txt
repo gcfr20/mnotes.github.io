@@ -89,3 +89,9 @@ Integer solutions to
 The answer to our problem is
 
 :math:`\#U-\#(A\cup B)`.
+
+ =================================================   
+
+.. toctree::
+
+   recurrence.rst
