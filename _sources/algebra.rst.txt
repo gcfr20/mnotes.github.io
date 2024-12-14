@@ -3,6 +3,10 @@ Algebra
 ======================================
 
 .. toctree::
+
+   realField.rst
+   
+   algebraicManipulations.rst
    
    algebraicIdentities.rst
 
