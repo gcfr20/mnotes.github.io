@@ -5,6 +5,8 @@ Algebra
 .. toctree::
 
    realField.rst
+ 
+   theoryIndices.rst
    
    algebraicManipulations.rst
    
